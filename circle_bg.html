@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-color animation</title>
+  <style>
+
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgb(10, 8, 97);
+    }
+    * {
+      margin: 0vw;
+      padding 0vw;
+      box-family: #2f363e;
+    }
+
+
+
+    #time {
+      display: flex;
+      gap: 5vw;
+      color: #eedede;
+      
+    }
+    element.style {
+      transform: rotate( 180deg);
+    }
+    #time div {
+      position: absolute;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .dots {
+      /* position: absolute; */
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    /* div.circle */
+    style attribute {
+      
+      --color: #04fc43;
+    }
+    .dots::before {
+      content:  '';
+      position: absolute;
+      top: -5px;
+      width: 15px;
+      height: 15px;
+      background: var( --color);
+      border-radius:50%;
+      box-shadow: 0 0 20px var(--color), 0 0 60px var(--color);
+    }
+/*  */
+    /* Inherited from div.dots.m_dot */
+
+
+
+
+
+    #time .circle svg circle:nth-child(2) {
+      stroke: var(--color);
+      /* display: flex;
+      justify-content: center; */
+      stroke-dasharray: 390;
+    }
+    #time .circle svg circle {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      fill: transparent;
+      stroke: #191919;
+      stroke-width: 5px;
+      transform: trnslate(5px,5px);
+    }
+
+    div {
+      display: block;
+      unicode-bidi: isolate;
+    }
+    style attribute {
+      --color: #fee800;
+    }
+    #time .circle {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #pointer {
+      display: flex;
+      justify-content: left;
+
+      transform: translate(85%, 50%);
+    }
+    #pointer p {
+      padding: 55%;
+      color: silver;
+    }
+    .md-by {
+      color: #04fc43;
+      font-size: 6vw;
+      align-self: center;
+    }
+   
+
+    
+    
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <!-- <p class="md-by">Akash's clock</p>
+    <span id="pointer"> <p>Hours</p>
+    <p>Minuts</p>
+  <p>Seconds</p>
+  
+</span> -->
+    <div id="time">
+      
+
+    <div class="circle" style="--color: #ff2972;">
+      <div class="dots h_dot" style="transform: rotate(280deg);">
+        
+        
+      </div>
+      <svg>
+        <circle cx="70" cy="70" r="70"></circle>
+        <circle cx="70" cy="70" r="70" id="hh" style="stroke-dashoffset: 110;"></circle>
+      </svg>
+      
+      <div id="hours">00 </div>
+    </div>
+  
+
+
+  <div class="circle" style="--color: #fee800; ">
+    <div class="dots m_dot" style="transform: rotate(30deg);">
+        
+    </div>
+    <svg>
+      <circle cx="70" cy="70" r="70"></circle>
+      <circle cx="70" cy="70" r="70" id="mm" style="stroke-dashoffset: 14.6667;"></circle>
+    </svg>
+    
+    <div id="min">00 </div>
+  </div>
+
+
+
+
+
+
+    <div class="circle" style="--color: #04fc43">
+      <div class="dots h_dot" style="transform: rotate(30deg);">
+      
+      </div>
+      <svg>
+        <circle cx="70" cy="70" r="70"></circle>
+        <circle cx="70" cy="70" r="70" id="ss" style="stroke-dashoffset: 66.6667;"></circle>
+      </svg>
+      
+      <div id="sec">00 Sec</div>
+    </div>
+  </div>   
+</div>
+
+
+    <div class="ap">
+      <div id="ampm">AM</div>
+    </div>
+    <h2>@ made by Akash</h2>
+
+  </div>
+
+</div>
+
+
+</body>
+<script>
+
+  let hours = document.getElementById("hours");
+  let min = document.getElementById("min");
+  let sec = document.getElementById("sec");
+  setInterval(() => {
+  let currentTime = new Date();
+  hours.innerHTML = (currentTime.getHours()<10?"0":"") + currentTime.getHours();
+  min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
+  sec.innerHTML = (currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
+  },1000)
+ 
+
+
+
+
+
+  // let hours innerHTML.getElementById(hours);
+  // let minutes innerHTML.getElementById(minutes);
+  // let seconds innerHTML.getElementById(seconds);
+
+  // console.log();
+
+  // let currentTime = new Date();
+  // let hours = today.getHours();
+  // let minutes = today.getMinutes();
+  // let seconds = today.getSeconds();
+  // minutes = checkTime(getMinutes);
+  // seconds = checkTime(getSeconds);
+
+  // document.getElementById('#hours').innerHTML = getHours;
+
+
+
+
+
+//   function startTime() {
+//   const today = new Date();
+//   let {getHours} = today.getHours();
+//   let {getMinutes} = today.getMinutes();
+//   let {getSeconds} = today.getSeconds();
+//   getMinutes = checkTime(getMinutes);
+//   getSeconds = checkTime(getSeconds);
+//   document.getElementById('txt').innerHTML =  getHours + ":" + getMinutes + ":" + getSeconds;
+//   setTimeout(startTime, 1000);
+// }
+
+// function checkTime(i) {
+//   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+//   return i;
+// }
+
+  
+	// <![CDATA[  <-- For SVG support
+	// if ('WebSocket' in window) {
+	// 	(function () {
+	// 		function refreshCSS() {
+	// 			var sheets = [].slice.call(document.getElementsByTagName("link"));
+	// 			var head = document.getElementsByTagName("head")[0];
+	// 			for (var i = 0; i < sheets.length; ++i) {
+	// 				var elem = sheets[i];
+	// 				var parent = elem.parentElement || head;
+	// 				parent.removeChild(elem);
+	// 				var rel = elem.rel;
+	// 				if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+	// 					var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+	// 					elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+	// 				}
+	// 				parent.appendChild(elem);
+	// 			}
+	// 		}
+	// 		var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+	// 		var address = protocol + window.location.host + window.location.pathname + '/ws';
+	// 		var socket = new WebSocket(address);
+	// 		socket.onmessage = function (msg) {
+	// 			if (msg.data == 'reload') window.location.reload();
+	// 			else if (msg.data == 'refreshcss') refreshCSS();
+	// 		};
+	// 		if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+	// 			console.log('Live reload enabled.');
+	// 			sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+	// 		}
+	// 	})();
+	// }
+	// else {
+	// 	console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	// }
+	// ]]>
+
+  </script>
+</html>
